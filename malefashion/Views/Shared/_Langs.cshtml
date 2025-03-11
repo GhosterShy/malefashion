@@ -1,0 +1,29 @@
+﻿﻿﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+@using System.Globalization
+@inject IOptions<RequestLocalizationOptions> locOptions
+
+
+@using Microsoft.AspNetCore.Localization
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var requestCulture = HttpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
+    var currentCulture = requestCulture?.RequestCulture.Culture.Name ?? "ru-RU";
+}
+
+
+
+<div class="header__top__hover">
+    <span style="color:white" class="text-theme">Lang<i class="arrow_carrot-down"></i></span>
+    <ul>
+        @foreach (CultureInfo item in locOptions.Value.SupportedUICultures)
+        {
+            <li style="cursor: pointer; color:black" onclick="ChangeCulture('@item.Name')">
+                @item.Name.Substring(0, 2)
+            </li>
+        }
+    </ul>
+</div>
+
