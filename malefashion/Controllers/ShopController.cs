@@ -4,7 +4,7 @@ namespace malefashion.Controllers
 {
     public class ShopController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Shop()
         {
             return View();
         }
