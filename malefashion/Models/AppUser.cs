@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace malefashion_master.Models
+namespace malefashion.Models
 {
 	public class AppUser : IdentityUser
 	{

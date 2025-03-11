@@ -75,10 +75,21 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
 
+
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a href="#">@User.Identity.Name</a>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("Register","Account")">Register</a>
+                                    <a href="@Url.Action("Index","Account")">Sign in</a>
+                                }
                                
 
 
-                                <a href="#">@Localizer["HelloBro"]</a>
+                                <a href="#">FAQS</a>
                                
                             </div>
                             <div class="header__top__hover">
@@ -107,10 +118,7 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a href="@Url.Action("Index","Home")">@Localizer["home"]</a></li>
-                            @if (Localizer["home"].IsResourceNotFound)
-                            {
-                                <p style="color: red;">Ключ "Home" не найден!</p>
-                            }
+                       
                             <li><a href="@Url.Action("Shop","Shop")">@Localizer["Shop"]</a></li>
                             <li>
                                 <a href="#">Pages</a>

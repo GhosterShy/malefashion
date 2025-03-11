@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using malefashion_master.Models;
+using malefashion.Models;
 
 #nullable disable
 
-namespace malefashion_master.Migrations
+namespace malefashion.Migrations
 {
     [DbContext(typeof(AppIdentityDBContext))]
     partial class AppIdentityDBContextModelSnapshot : ModelSnapshot
@@ -155,7 +155,7 @@ namespace malefashion_master.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("malefashion_master.Models.AppUser", b =>
+            modelBuilder.Entity("malefashion.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -231,7 +231,7 @@ namespace malefashion_master.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("malefashion_master.Models.AppUser", null)
+                    b.HasOne("malefashion.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -240,7 +240,7 @@ namespace malefashion_master.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("malefashion_master.Models.AppUser", null)
+                    b.HasOne("malefashion.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -255,7 +255,7 @@ namespace malefashion_master.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("malefashion_master.Models.AppUser", null)
+                    b.HasOne("malefashion.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -264,7 +264,7 @@ namespace malefashion_master.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("malefashion_master.Models.AppUser", null)
+                    b.HasOne("malefashion.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace malefashion_master.Migrations
+namespace malefashion.Migrations
 {
     /// <inheritdoc />
-    public partial class identity : Migration
+    public partial class user : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
